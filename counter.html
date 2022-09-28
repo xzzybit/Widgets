@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Counter</title>
+</head>
+<body>
+    <div class="qty mt-5">
+        <span class="minus bg-dark">-</span>
+        <input type="number" class="count" name="qty" value="1">
+        <span class="plus bg-dark">+</span>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+	    $('.count').prop('disabled', true);
+   	    $(document).on('click','.plus',function(){
+			$('.count').val(parseInt($('.count').val()) + 1 );
+    	});
+        $(document).on('click','.minus',function(){
+    		$('.count').val(parseInt($('.count').val()) - 1 );
+    			if ($('.count').val() == 0) {
+					$('.count').val(1);
+				}
+    	    });
+ 		});
+</script>
+</html>
